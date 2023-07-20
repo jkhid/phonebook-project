@@ -3,10 +3,9 @@ const morgan = require('morgan')
 const app = express()
 const cors = require('cors')
 
-
+app.use(express.static('build'))
 app.use(express.json())
 app.use(cors())
-
 
 // Need to create token in order to output POST into log with new object
 morgan.token('object', function getObject(req) {
