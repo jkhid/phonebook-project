@@ -105,12 +105,12 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h2>Phonebook</h2>
+    <div className="container">
+      <h2 className="header">Phonebook</h2>
       <Notification message={addNotification} type="success"/>
       <Notification message={errorNotification} type="error" />
       <Filter value={searchQuery} onChange={filterContacts}/>
-      <h2>Add Contact</h2>
+      <h2 className="header">Add Contact</h2>
       <Form 
         addPerson={addPerson}
         newName={newName}
@@ -118,7 +118,7 @@ const App = () => {
         newNumber={newNumber}
         handleNumberChange={handleNumberChange}
       />
-      <h2>Numbers</h2>
+      <h2 className="header">Numbers</h2>
       <Persons filteredPersons={filteredPersons} deleteContact={deleteContact}/>
     </div>
   )
