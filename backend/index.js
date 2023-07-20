@@ -1,9 +1,12 @@
 const express= require('express')
 const morgan = require('morgan')
 const app = express()
+const cors = require('cors')
 
 
 app.use(express.json())
+app.use(cors())
+
 
 // Need to create token in order to output POST into log with new object
 morgan.token('object', function getObject(req) {
@@ -113,7 +116,7 @@ const unknownEndpoint = (req, res) => {
 }
 app.use(unknownEndpoint)
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}!`)
 })
