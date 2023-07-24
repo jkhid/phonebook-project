@@ -42,8 +42,8 @@ let persons = [
 
 // Endpoint for the root page
 app.get('/', (req, res) => {
-    res.send('<h1>People App</h1>')
-})
+  res.redirect('http://localhost:3000');
+});
 
 // Endpoint to retrieve all people from the phonebook
 app.get('/api/persons', (req, res) => {
